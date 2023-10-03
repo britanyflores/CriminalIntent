@@ -1,5 +1,6 @@
 package com.bignerdranch.android.criminalintent
 
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,8 +13,9 @@ class CrimeHolder(
     private val binding: ListItemCrimeBinding
 ) : RecyclerView.ViewHolder(binding.root){
     fun bind(crime: Crime, onCrimeClicked: (crimeId: UUID) -> Unit){
+
         binding.crimeTitle.text = crime.title
-        binding.crimeDate.text = crime.date.toString()
+        binding.crimeDate.text = DateFormat.format("EEEE, MMM dd, yyyy", crime.date)
 
         binding.root.setOnClickListener{
             onCrimeClicked(crime.id)

@@ -22,6 +22,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collect
 import java.util.Date
 import java.util.UUID
+import android.text.format.DateFormat
+
 
 private var _binding: FragmentCrimeListBinding? = null
 private val binding
